@@ -6,10 +6,12 @@ h = Hh_vacancy
 null = None
 text = 'Системный+администратор'
 link = 'https://api.hh.ru/vacancies?text={0}&area=1&no_magic=true&per_page=100'.format(text)
+headers={'User-Agent': 'api-test-agent'}
 key = ''
 au = 'Bearer ' + key
+headers['Authorization'] = au
 
-r = requests.get(link, headers={'User-Agent': 'api-test-agent', 'Authorization': au})
+r = requests.get(link, headers)
 data = r.json()
 print(data['pages'])
 print(data['found'])
