@@ -1,1 +1,5 @@
 env
+__pycache__
+response_vacancy.json
+response.json
+mybase.db

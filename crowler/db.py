@@ -20,7 +20,7 @@ class Hh_vacancy(Base):
     area_name = Column(String(10))
     responsibility = Column(Text)
     requirement = Column(Text)
-    vacancy_id = Column(Integer)
+    vacancy_id = Column(Integer, unique=True)
     employer_name = Column(String(20))
     employer_id = Column(String(20))
     vacancy = relationship('Vacancy', backref='details')
