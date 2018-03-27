@@ -1,0 +1,18 @@
+
+{% extends 'blog/base.html' %}
+{% block content %}
+{% if vacancy_p %}
+    <ul>
+    {% for vacancy in vacancy_p %}
+    <div class='post'>
+        <li><h1><a href="{% url 'blog:detail' vacancy.vacancy_id %}">{{ vacancy.name }}</a></h1></li>
+        <li>{{ vacancy.responsibility }}</li>
+        <li>{{ vacancy.requirement }}</li>
+    </div>  
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No blog are available.</p>
+{% endif %}
+{% endblock %}
+ 

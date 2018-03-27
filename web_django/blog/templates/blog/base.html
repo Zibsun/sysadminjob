@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+    <head>
+        <title>SYSADMINJOB</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog.css' %}" />
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">SYSADMINJOB</a></h1>
+        </div>
+        <div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if vacancy_p.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ vacancy_p.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ vacancy_p.number }} of {{ vacancy_p.paginator.num_pages }}.
+        </span>
+
+        {% if vacancy_p.has_next %}
+            <a href="?page={{ vacancy_p.next_page_number }}">next</a>
+            <a href="?page={{ vacancy_p.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</body>
+</html>

@@ -3,3 +3,9 @@ __pycache__
 response_vacancy.json
 response.json
 mybase.db
+*.pyc
+*~
+__pycache__
+db.sqlite3
+/static
+.DS_Store

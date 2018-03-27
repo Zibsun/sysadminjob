@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="post">
+<li><h1>{{ vacancy.name }}</h1></li>
+<li>{{ vacancy.experience }}</li>
+<li>{{ vacancy.salary_from }}</li>
+<li>{{ vacancy.salary_to }}</li>
+<li>{{ vacancy.responsibility }}</li>
+<li>{{ vacancy.requirement }}</li>
+</div>
+{% endblock %}
